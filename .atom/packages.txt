@@ -1,0 +1,5 @@
+atom-beautify@0.33.4
+city-lights-icons@1.1.1
+city-lights-syntax@1.1.8
+city-lights-ui@1.5.3
+file-icons@2.1.43

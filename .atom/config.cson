@@ -1,0 +1,15 @@
+"*":
+  "city-lights-ui":
+    fontSize: 10
+    showTabsInTreeView: true
+    tabSize: "small"
+  core:
+    telemetryConsent: "no"
+    themes: [
+      "city-lights-ui"
+      "city-lights-syntax"
+    ]
+  "exception-reporting":
+    userId: "24139f9a-c2ee-464a-87e3-785752b0c6d8"
+  welcome:
+    showOnStartup: false

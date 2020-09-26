@@ -713,6 +713,11 @@ running "Make iTerm2 load new tabs in the same directory"
 # defaults write com.googlecode.iterm2 "Normal Font" -string "Hack-Regular 12";
 # defaults write com.googlecode.iterm2 "Non Ascii Font" -string "RobotoMonoForPowerline-Regular 12";
 ok
+
+# Force iTerm to check ~/.dotfiles/.iTerm2 directory for configuration
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "${HOME}/.dotfiles/iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
 # running "reading iterm settings"
 # defaults read -app iTerm > /dev/null 2>&1;
 # ok

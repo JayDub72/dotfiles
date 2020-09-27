@@ -17,13 +17,13 @@ cp ./.atom/config.cson ~/.atom/
 ok
 
 # Change plain-text files to use Atom or Sublime
-action 'setting atom as default editor'
+action 'Setting atom as default editor'
 # duti -s com.sublimetext.3 public.plain-text all
 duti -s com.gitbub.atom public.plain-text all
 ok
 
 # Configuring iterm2
-action "Confirmation iTerm2"
+action "Configuring iTerm2"
 mkdir -p ~/.dotfiles/iterm2
 cp ./terminal/com.googlecode.iterm2.plist ~/.dotfiles/iterm2
 ok
@@ -33,42 +33,21 @@ mkdir -p ~/Documents/github/
 ok
 
 # Install Office 365
-action 'downloading microsoft office (this takes a long time...)'
+action 'Downloading microsoft office (this takes a long time...)'
 wget -q -O Ofc365.pkg https://go.microsoft.com/fwlink/?linkid=525133
 ok
 
-action 'installing microsoft office (be patient again)'
+action 'Installing microsoft office (be patient again)'
 sudo installer -pkg ./Ofc365.pkg -target /
+rm -f ./Ofc365.pkg
 ok
 
 action "Cleaning up Dock"
-sudo dockutil --remove '/Applications/Launchpad.app'
-sudo dockutil --remove '/Applications/Safari.app'
-sudo dockutil --remove '/Applications/Mail.app'
-sudo dockutil --remove '/Applications/FaceTime.app'
-sudo dockutil --remove '/Applications/Maps.app'
-sudo dockutil --remove '/Applications/Contacts.app'
-sudo dockutil --remove '/Applications/Reminders.app'
-sudo dockutil --remove '/Applications/Music.app'
-sudo dockutil --remove '/Applications/Podcast.app'
-sudo dockutil --remove '/Applications/TV.app'
-sudo dockutil --remove '/Applications/News.app'
-sudo dockutil --remove '/Applications/Keynote.app'
-sudo dockutil --remove '/Applications/Numbers.app'
-sudo dockutil --remove '/Applications/App Store.app'
-sudo dockutil --remove '/Applications/System Preferences.app'
-sudo dockutil --remove '/Applications/TV.app'
+sudo dockutil --removeall
 
 dockutil --add '/Applications/Firefox.app/'
-dockutil --add '/Applications/Calendar.app/'
-dockutil --add '/Applications/Messages.app/'
-dockutil --add '/Applications/Notes.app/'
-dockutil --add '/Applications/Spotify.app'
 dockutil --add '/Applications/Atom.app'
 dockutil --add '/Applications/iTerm.app'
-dockutil --add '/Applications/Photos.app'
 dockutil --add '/Applications' --view grid --display folder --sort name --section others --allhomes
 dockutil --add '~/Documents' --view list --display folder --sort name --section others --allhomes
 dockutil --add '~/Downloads' --view list --display folder --sort name --section others --allhomes
-
-rm -f ./Ofc365.pkg

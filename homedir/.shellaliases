@@ -5,6 +5,8 @@
 alias p='d ~/Document/github'
 alias grep='grep --color'
 alias more="bat"
+alias l='ls'
+alias ll='ls -la'
 
 # find/disk util aliases
 alias dud='du -d 1 -h'

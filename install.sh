@@ -156,6 +156,7 @@ if [[ $? != 0 ]]; then
     error "unable to install homebrew, script $0 abort!"
     exit 2
   fi
+  brew bundle
   brew analytics off
 else
   ok
@@ -176,12 +177,6 @@ fi
 # Just to avoid a potential bug
 mkdir -p ~/Library/Caches/Homebrew/Formula
 brew doctor
-
-# Installing brew/cask Applications
-bot "Installing homebrew applications"
-action "installing"
-brew bundle
-ok
 
 # set zsh as the user login shell
 CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
@@ -244,13 +239,6 @@ if [[ $response =~ (y|yes|Y) ]]; then
   source ./appinstall.sh
 fi
 
-bot "macOS Configuration"
-read -r -p "Do you want to install custom applications and configure them? [y|N] " response
-if [[ $response =~ (y|yes|Y) ]]; then
-  bot "Installing & Configuring specific applications..."
-  source ./macos.sh
-fi
-
 bot "Setup SSH keys"
 read -r -p "Do you want to configure SSH now? [y|N] " response
 if [[ $response =~ (y|yes|Y) ]]; then
@@ -261,13 +249,19 @@ if [[ $response =~ (y|yes|Y) ]]; then
   /usr/bin/ssh-add -K ~/.ssh/id_rsa
   pbcopy < ~/.ssh/id_rsa.pub
 
-  success "SSH key generated and in clipboard.  Log in to github and enable authentication."
+  bot "SSH key generated and in clipboard.  Log in to github and enable authentication."
 fi
-
 
 running "Cleanup homebrew"
 brew cleanup --force > /dev/null 2>&1
 rm -f -r /Library/Caches/Homebrew/* > /dev/null 2>&1
 ok
+
+bot "macOS Configuration"
+read -r -p "Do you want to install custom applications and configure them? [y|N] " response
+if [[ $response =~ (y|yes|Y) ]]; then
+  bot "Installing & Configuring specific applications..."
+  source ./macos.sh
+fi
 
 bot "All done."

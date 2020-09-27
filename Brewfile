@@ -17,6 +17,7 @@ brew "coreutils"											# GNU File, Shell, and Text utilities
 brew "curl"													  # Get a file from an HTTP, HTTPS or FTP server
 brew "findutils"											# Collection of GNU find, xargs and locate
 # brew "foremost"												# Console program to recover files based on their headers and footers
+brew "gawk"
 # brew "gnu-sed"	                			# GNU implementation of the famous stream editor
 # brew "gnupg"										  		# GNU Pretty Good Privacy (PGP) package
 brew "go"													    # Open source programming language to build simple/reliable/efficient software

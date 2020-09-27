@@ -511,6 +511,9 @@ defaults write com.apple.dock mru-spaces -bool false;ok
 running "Remove the animation when hiding/showing the Dock"
 defaults write com.apple.dock autohide-time-modifier -float 0;ok
 
+running "Hide recent applications in the Dock"
+defaults write com.apple.dock show-recents -bool FALSE
+
 # running "Automatically hide and show the Dock"
 # defaults write com.apple.dock autohide -bool true;ok
 

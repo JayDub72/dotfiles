@@ -43,7 +43,7 @@ rm -f ./Ofc365.pkg
 ok
 
 action "Cleaning up Dock"
-sudo dockutil --removeall
+sudo dockutil --remove all
 
 dockutil --add '/Applications/Firefox.app/'
 dockutil --add '/Applications/Atom.app'

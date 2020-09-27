@@ -157,6 +157,7 @@ if [[ $? != 0 ]]; then
     exit 2
   fi
   brew bundle
+  brew install romkatv/powerlevel10k/powerlevel10k
   brew analytics off
 else
   ok

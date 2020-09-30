@@ -2,7 +2,7 @@
 
 ################################
 # Custom aliases
-alias p='cd ~/Document/github'
+alias p='cd ~/Documents/github'
 alias grep='grep --color'
 alias more="bat"
 alias l='ls'

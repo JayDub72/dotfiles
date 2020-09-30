@@ -2,11 +2,12 @@
 
 ################################
 # Custom aliases
-alias p='d ~/Document/github'
+alias p='cd ~/Document/github'
 alias grep='grep --color'
 alias more="bat"
 alias l='ls'
 alias ll='ls -la'
+alias brewup='brew update; brew cleanup; brew doctor'
 
 # find/disk util aliases
 alias dud='du -d 1 -h'

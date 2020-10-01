@@ -1,4 +1,28 @@
 Host *
- AddKeysToAgent yes
- UseKeychain yes
- IdentityFile ~/.ssh/id_rsa
+        AddKeysToAgent yes
+        IdentityFile ~/.ssh/id_rsa
+
+Host prox
+        HostName 192.168.1.199
+        User root
+
+Host plex
+        HostName 192.168.1.200
+        User jason
+
+Host deluge
+        HostName 192.168.1.201
+        User jason
+
+Host sonarr
+        HostName 192.168.1.202
+        User jason
+
+Host radarr
+        HostName 192.168.1.203
+        User jason
+
+Host jackett
+        HostName 192.168.1.204
+        User jason
+        
